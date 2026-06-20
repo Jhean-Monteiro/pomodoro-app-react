@@ -3,7 +3,8 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
+  // base removido — Vercel usa "/"
   resolve: {
-    dedupe: ["react", "react-dom"], // força uma única cópia
+    dedupe: ["react", "react-dom"],
   },
 });
