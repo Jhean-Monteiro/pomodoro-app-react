@@ -38,6 +38,28 @@ export const RingContainer = styled.div`
 `;
 
 
+// preenchimento interno que sobe de baixo pra cima conforme o progresso
+export const FillContainer = styled.div<{ $progress: number }>`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 210px;
+  height: 210px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  overflow: hidden;
+  clip-path: inset(${({ $progress }) => 100 - $progress}% 0 0 0);
+  transition: clip-path 0.8s ease;
+  z-index: 0;
+`;
+
+export const FillOverlay = styled.div`
+  width: 100%;
+  height: 100%;
+  background: #4caf7d;
+  opacity: 0.1;
+`;
+
 // O SVG em si (não precisa de styled, mas o círculo de progresso som)
 export const ProgressCircle = styled.circle<RingProps>`
     /* Transição suave do progresso */

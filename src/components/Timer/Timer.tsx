@@ -6,6 +6,8 @@ import type {Phase} from "../../types/pomodoro.types";
 import {
   TimerWrapper,
   RingContainer,
+  FillContainer,
+  FillOverlay,
   ProgressCircle,
   TimeDisplay,
   PhaseLabel,
@@ -41,6 +43,11 @@ export const Timer: React.FC<TimerProps> = ({
     return (
         <TimerWrapper>
             <RingContainer>
+                {/* preenchimento interno sobe conforme o progresso */}
+                <FillContainer $progress={progress}>
+                  <FillOverlay />
+                </FillContainer>
+
                 {/* SVG do anel de progresso */}
                 <svg width="260" height="260" viewBox="0 0 260 260">
                 {/* Trilha de fundo (cinza escuro) */}

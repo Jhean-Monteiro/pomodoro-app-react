@@ -48,7 +48,7 @@ export function usePomodoro() {
                             ...prev,
                             phase: nextPhase,
                             timeLeft: DURATIONS[prev.mode][nextPhase],
-                            isRunning: false, // pausa ao trocar de fase
+                            isRunning: true, // continua automaticamente ao trocar de fase
                             cycles: nextCycles,
                         };
 
